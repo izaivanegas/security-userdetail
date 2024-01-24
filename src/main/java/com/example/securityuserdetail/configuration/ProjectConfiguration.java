@@ -1,10 +1,9 @@
 package com.example.securityuserdetail.configuration;
 
-import com.example.securityuserdetail.service.UserDetailService;
+import com.example.securityuserdetail.service.UserDetailServiceImpl;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -16,7 +15,7 @@ public class ProjectConfiguration {
 
     @Bean
     public UserDetailsService userDetailsService(){
-        return new UserDetailService();
+        return new UserDetailServiceImpl();
     }
 
     @Bean
